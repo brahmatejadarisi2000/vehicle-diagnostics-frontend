@@ -22,6 +22,7 @@ Make sure you're using Node.js **v18.20.0**
 ```bash
 npm install
 ng serve
+``
 
 Open your browser at:
 http://localhost:4200
