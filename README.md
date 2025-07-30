@@ -5,7 +5,7 @@ It allows users to upload and view vehicle diagnostic log files through a web in
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠Tech Stack
 
 - ✅ Angular CLI version: **14.2.13**
 - ✅ Node.js version: **18.20.0**
@@ -22,7 +22,7 @@ Make sure you're using Node.js **v18.20.0**
 ```bash
 npm install
 ng serve
-``
+```
 
 Open your browser at:
 http://localhost:4200
