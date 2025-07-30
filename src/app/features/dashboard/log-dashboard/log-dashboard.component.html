@@ -1,30 +1,33 @@
 <!-- log-dashboard.component.html -->
 <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
-    <input formControlName="vehicleId" placeholder="Vehicle ID" />
-    <input formControlName="code" placeholder="Error Code" />
-    <input type="datetime-local" formControlName="from" />
-    <input type="datetime-local" formControlName="to" />
-    <button type="submit">Search</button>
-  </form>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Timestamp</th>
-        <th>Vehicle ID</th>
-        <th>Level</th>
-        <th>Code</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let log of logs">
-        <td>{{ log.timestamp }}</td>
-        <td>{{ log.vehicleId }}</td>
-        <td>{{ log.level }}</td>
-        <td>{{ log.code }}</td>
-        <td>{{ log.description }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <input formControlName="vehicleId" placeholder="Vehicle ID" />
+  <input formControlName="code" placeholder="Error Code" />
+  <input type="datetime-local" formControlName="from" />
+  <input type="datetime-local" formControlName="to" />
+  <button type="submit">Search</button>
+</form>
+
+<table *ngIf="logs.length > 0; else noData">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Vehicle ID</th>
+      <th>Level</th>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let log of logs; trackBy: trackByLog">
+      <td>{{ log.timestamp }}</td>
+      <td>{{ log.vehicleId }}</td>
+      <td>{{ log.level }}</td>
+      <td>{{ log.code }}</td>
+      <td>{{ log.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noData>
+  <p>No data found</p>
+</ng-template>

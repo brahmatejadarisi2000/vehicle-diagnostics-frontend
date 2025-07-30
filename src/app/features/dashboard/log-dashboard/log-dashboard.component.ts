@@ -53,4 +53,9 @@ export class LogDashboardComponent implements OnInit {
     });
   }
 
+  trackByLog(index: number, log: any): string {
+    return `${log.timestamp}-${log.vehicleId}`;
+  }
+
+
 }
