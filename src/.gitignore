@@ -1,0 +1,6 @@
+# Angular output folders
+/dist/
+/out-tsc/
+
+# Node modules
+/node_modules/
